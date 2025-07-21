@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #222;
+}
+nav {
+  background: #222;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin: 0 1.5rem;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+nav ul li a:hover {
+  color: #4f8cff;
+}
+section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+h1 {
+  margin-top: 0;
+  color: #4f8cff;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+input, textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #357ae8;
+}
+#formMessage {
+  margin-top: 1rem;
+  color: #357ae8;
+  font-weight: bold;
+} 
