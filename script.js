@@ -62,6 +62,35 @@ if (window.location.hash && document.querySelector(window.location.hash)) {
 const downloadResumeBtn = document.getElementById('downloadResume');
 
 downloadResumeBtn.addEventListener('click', () => {
+  // Check if PDF file exists (for hosted version)
+  const pdfUrl = './Chethan_QA.pdf';
+  
+  // Try to download PDF first, fallback to text if PDF not available
+  fetch(pdfUrl)
+    .then(response => {
+      if (response.ok) {
+        // PDF exists, download it
+        const a = document.createElement('a');
+        a.href = pdfUrl;
+        a.download = 'Chethan_GN_Resume.pdf';
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showNotification('PDF Resume downloaded successfully!', 'success');
+      } else {
+        // PDF not found, fallback to text version
+        downloadTextResume();
+      }
+    })
+    .catch(() => {
+      // Error fetching PDF, fallback to text version
+      downloadTextResume();
+    });
+});
+
+// Fallback function for text resume
+function downloadTextResume() {
   // Create resume content from Chethan's actual resume
   const resumeContent = `
 CHETHAN G N
@@ -121,7 +150,7 @@ CERTIFICATIONS & UP-SKILLING
 • Karate for UI & API Automation - Certified
 • Python for AI - Certified
 • AI Masterclass (Ongoing) - Be10X
-• Playwright with JavaScript (Self-paced learning, ongoing)
+• Playwright with JavaScript - Certified
   `;
 
   // Create a blob with the resume content
@@ -142,8 +171,8 @@ CERTIFICATIONS & UP-SKILLING
   document.body.removeChild(a);
   
   // Show success message
-  showNotification('Resume downloaded successfully!', 'success');
-});
+  showNotification('Text Resume downloaded successfully!', 'success');
+}
 
 // Notification system
 function showNotification(message, type = 'info') {
