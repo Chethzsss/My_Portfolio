@@ -29,69 +29,166 @@
     <div class="hero">
       <h1>Your Name</h1>
       <p class="subtitle">Aspiring [Your Role/Title]</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="downloadResume">
+          <span class="btn-icon">📄</span>
+          Download Resume
+        </button>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
     </div>
   </header>
   <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Brief introduction about yourself. Your passion, goals, and what makes you unique.</p>
-    </section>
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <!-- Timeline items will go here -->
-        <div class="timeline-item">
-          <div class="timeline-date">2022 - Present</div>
-          <div class="timeline-content">
-            <h3>Company Name</h3>
-            <p>Role/Position</p>
-            <p>Short description of your responsibilities and achievements.</p>
+    <div class="container">
+      <div class="card" id="about">
+        <div class="card-header">
+          <h2>👋 About Me</h2>
+        </div>
+        <div class="card-body">
+          <p>Brief introduction about yourself. Your passion, goals, and what makes you unique.</p>
+        </div>
+      </div>
+
+      <div class="card" id="experience">
+        <div class="card-header">
+          <h2>💼 Experience</h2>
+        </div>
+        <div class="card-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2022 - Present</div>
+              <div class="timeline-content">
+                <h3>Company Name</h3>
+                <p class="role">Role/Position</p>
+                <p>Short description of your responsibilities and achievements.</p>
+              </div>
+            </div>
+            <!-- Add more timeline items as needed -->
           </div>
         </div>
-        <!-- Add more timeline items as needed -->
       </div>
-    </section>
-    <section id="education">
-      <h2>Education</h2>
-      <ul class="education-list">
-        <li>
-          <strong>Post Graduate</strong> - University Name (Year)
-        </li>
-        <li>
-          <strong>Graduate</strong> - University Name (Year)
-        </li>
-        <li>
-          <strong>12th Grade</strong> - School Name (Year)
-        </li>
-        <li>
-          <strong>10th Grade</strong> - School Name (Year)
-        </li>
-      </ul>
-    </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Other Skill</li>
-      </ul>
-    </section>
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <ul class="certifications-list">
-        <li>Certification Name - Issuer (Year)</li>
-        <!-- Add more certifications as needed -->
-      </ul>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-links">
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-        <a href="mailto:youremail@example.com" aria-label="Email">Email</a>
+
+      <div class="card" id="education">
+        <div class="card-header">
+          <h2>🎓 Education</h2>
+        </div>
+        <div class="card-body">
+          <div class="education-grid">
+            <div class="education-item">
+              <div class="education-icon">🎓</div>
+              <div class="education-content">
+                <h4>Post Graduate</h4>
+                <p>University Name (Year)</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div class="education-icon">🎓</div>
+              <div class="education-content">
+                <h4>Graduate</h4>
+                <p>University Name (Year)</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div class="education-icon">📚</div>
+              <div class="education-content">
+                <h4>12th Grade</h4>
+                <p>School Name (Year)</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div class="education-icon">📚</div>
+              <div class="education-content">
+                <h4>10th Grade</h4>
+                <p>School Name (Year)</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <div class="card" id="skills">
+        <div class="card-header">
+          <h2>🛠️ Skills</h2>
+        </div>
+        <div class="card-body">
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4>Frontend</h4>
+              <div class="skills-list">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Backend</h4>
+              <div class="skills-list">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Tools</h4>
+              <div class="skills-list">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">Figma</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="certifications">
+        <div class="card-header">
+          <h2>🏆 Certifications</h2>
+        </div>
+        <div class="card-body">
+          <div class="certifications-grid">
+            <div class="certification-item">
+              <div class="certification-icon">🏆</div>
+              <div class="certification-content">
+                <h4>Certification Name</h4>
+                <p>Issuer (Year)</p>
+              </div>
+            </div>
+            <!-- Add more certifications as needed -->
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="contact">
+        <div class="card-header">
+          <h2>📧 Contact</h2>
+        </div>
+        <div class="card-body">
+          <div class="contact-grid">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-icon">💼</div>
+              <div class="contact-content">
+                <h4>LinkedIn</h4>
+                <p>Connect with me</p>
+              </div>
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-icon">🐙</div>
+              <div class="contact-content">
+                <h4>GitHub</h4>
+                <p>View my projects</p>
+              </div>
+            </a>
+            <a href="mailto:youremail@example.com" class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div class="contact-content">
+                <h4>Email</h4>
+                <p>Send me a message</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
     <p>&copy; 2024 Your Name. All rights reserved.</p>
