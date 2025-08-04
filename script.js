@@ -10,7 +10,6 @@ hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
@@ -18,52 +17,111 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
   });
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links (only on user click, not on page load)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    // Only handle if href is not just '#'
+    const hash = this.getAttribute('href');
+    if (hash.length > 1) {
+      const target = document.querySelector(hash);
+      if (target) {
+        e.preventDefault();
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = target.offsetTop - headerHeight - 20; // 20px extra padding
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   });
 });
+
+// --- Prevent browser auto-scroll on page load with hash ---
+if (window.location.hash && document.querySelector(window.location.hash)) {
+  // Scroll to top instantly to prevent browser's default jump
+  window.scrollTo(0, 0);
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const headerHeight = document.querySelector('header').offsetHeight;
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        const targetPosition = target.offsetTop - headerHeight - 20;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        // Remove hash from URL to prevent future jumps
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }, 10); // slight delay to ensure layout is ready
+  });
+}
 
 // Download Resume functionality
 const downloadResumeBtn = document.getElementById('downloadResume');
 
 downloadResumeBtn.addEventListener('click', () => {
-  // Create a sample resume content (you can replace this with your actual resume)
+  // Create resume content from Chethan's actual resume
   const resumeContent = `
-Your Name
-Professional Title
-Email: your.email@example.com
-Phone: +1 (555) 123-4567
-LinkedIn: linkedin.com/in/yourprofile
-GitHub: github.com/yourusername
+CHETHAN G N
+Bengaluru | +91 9739863755 | chethan.nayak02@gmail.com
+QA Lead | Automation & Manual Testing | 9+ Years Experience
 
 PROFESSIONAL SUMMARY
-Experienced professional with expertise in [your field]. Passionate about [your interests] and committed to delivering high-quality results.
 
-EXPERIENCE
-Company Name | Role/Position | 2022 - Present
-• Key achievement 1
-• Key achievement 2
-• Key achievement 3
+Result-driven QA Lead with 9+ years of proven experience in both manual and automation testing, with a strong focus on Selenium with Java, BDD frameworks, and API testing. Expertise in designing robust automation suites, leading end-to-end testing efforts, and ensuring product quality in Agile and scrum-driven environments.
+Recognized for improving test efficiency, mentoring QA teams, and collaborating closely with stakeholders to align quality goals with product roadmaps. Passionate about driving quality in high-performance, scalable, and customer-centric applications - particularly in healthcare and product-based ecosystems.
+Currently upskilling in Playwright with JavaScript and enrolled in an AI Masterclass to explore intelligent automation.
+
+CORE SKILLS & TOOLS
+
+• Automation: Selenium WebDriver with Java, TestNG, BDD (Cucumber), Karate (UI & API)
+• Manual Testing: Functional, Sanity, Regression, UAT, E2E Integration
+• API Testing: Postman, Karate DSL
+• Defect Tracking & Management: Jira, Zephyr
+• Agile Tools: Confluence, Jira, Scrum Ceremonies
+• Programming & Scripting: Java (BDD Framework), Python (AI Certification)
+• CI/CD & Version Control: Git
+• Soft Skills: Team Leadership, Stakeholder Communication, Documentation
+
+WORK HISTORY
+
+QA Lead
+Detrans Solutions LLP, Bengaluru | Nov 2019 - Dec 2024
+
+• Spearheaded QA efforts for multiple product releases in Agile sprints.
+• Built and maintained BDD-based Automation Regression Suite using Java, ensuring end-to-end coverage.
+• Reviewed product requirements from Confluence and translated them into Zephyr test cases.
+• Conducted functional, regression, and sanity testing across multiple environments.
+• Represented QA in daily scrums and stakeholder demos, ensuring transparency in progress and risk areas.
+• Improved bug-reporting practices and streamlined communication between QA and Dev teams.
+• Mentored junior QA engineers, enhancing overall team delivery and quality ownership
+
+QA Engineer
+BTC Soft Pvt Ltd, Bengaluru | Nov 2015 - Nov 2019
+
+• Executed manual and functional testing on custom applications using client-provided Excel tools.
+• Actively participated in client calls and sprint meetings to provide QA input and gather feedback.
+• Created thorough documentation including MoMs and change request handling processes.
+• Reduced defect leakage by authoring strong test scenarios and detailed test documentation.
+• Assisted with API Testing and validating production deployments via sanity tests
 
 EDUCATION
-Degree Name | University Name | Year
-• Relevant coursework or achievements
 
-SKILLS
-• Technical Skills: HTML, CSS, JavaScript, [other skills]
-• Soft Skills: Communication, Problem Solving, Teamwork
+M.Tech - Digital Electronics & Communication
+APS College of Engineering, Bengaluru - 2014
 
-CERTIFICATIONS
-• Certification Name - Issuer (Year)
+B.E. - Electronics & Communication
+NMAM Institute of Technology, Nitte - 2011
+
+CERTIFICATIONS & UP-SKILLING
+
+• Selenium WebDriver with Java - Basics to Advanced - Certified
+• Karate for UI & API Automation - Certified
+• Python for AI - Certified
+• AI Masterclass (Ongoing) - Be10X
+• Playwright with JavaScript (Self-paced learning, ongoing)
   `;
 
   // Create a blob with the resume content
@@ -73,7 +131,7 @@ CERTIFICATIONS
   const url = window.URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'YourName_Resume.txt';
+  a.download = 'Chethan_GN_Resume.txt';
   
   // Trigger download
   document.body.appendChild(a);
@@ -141,7 +199,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all cards for animation
 document.querySelectorAll('.card').forEach(card => {
   card.style.opacity = '0';
   card.style.transform = 'translateY(30px)';

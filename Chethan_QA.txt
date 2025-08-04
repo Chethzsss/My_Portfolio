@@ -1,0 +1,64 @@
+CHETHAN G N
+Bengaluru | +91 9739863755 | chethan.nayak02@gmail.com
+QA Lead | Automation & Manual Testing | 9+ Years Experience
+　　　　　　　　　　　　　　Professional Summary
+
+
+Result-driven QA Lead with 9+ years of proven experience in both manual and automation testing, with a strong focus on Selenium with Java, BDD frameworks, and API testing. Expertise in designing robust automation suites, leading end-to-end testing efforts, and ensuring product quality in Agile and scrum-driven environments.
+Recognized for improving test efficiency, mentoring QA teams, and collaborating closely with stakeholders to align quality goals with product roadmaps.
+Passionate about driving quality in high-performance, scalable, and customer-centric
+applications - particularly in healthcare and product-based ecosystems.
+Currently upskilling in Playwright with JavaScript and enrolled in an AI Masterclass to explore intelligent automation.
+
+Core Skills & Tools
+
+Automation: Selenium WebDriver with Java, TestNG, BDD (Cucumber), Karate (UI & API)
+Manual Testing: Functional, Sanity, Regression, UAT, E2E Integration
+API Testing: Postman, Karate DSL
+Defect Tracking & Management: Jira, Zephyr
+Agile Tools: Confluence, Jira, Scrum Ceremonies
+Programming & Scripting: Java (BDD Framework), Python (AI Certification)
+CI/CD & Version Control: Git
+Soft Skills: Team Leadership, Stakeholder Communication, Documentation
+
+Work History
+
+QA Lead
+Detrans Solutions LLP, Bengaluru | Nov 2019 - Dec 2024
+
+Spearheaded QA efforts for multiple product releases in Agile sprints.
+Built and maintained BDD-based Automation Regression Suite using Java, ensuring end-to-end coverage.
+Reviewed product requirements from Confluence and translated them into Zephyr test cases.
+Conducted functional, regression, and sanity testing across multiple environments.
+Represented QA in daily scrums and stakeholder demos, ensuring transparency in progress and risk areas.
+Improved bug-reporting practices and streamlined communication between QA and Dev teams.
+Mentored junior QA engineers, enhancing overall team delivery and quality ownership
+
+QA Engineer
+BTC Soft Pvt Ltd, Bengaluru | Nov 2015 - Nov 2019
+
+Executed manual and functional testing on custom applications using client-provided Excel tools.
+Actively participated in client calls and sprint meetings to provide QA input and gather feedback.
+Created thorough documentation including MoMs and change request handling processes.
+Reduced defect leakage by authoring strong test scenarios and detailed test documentation.
+Assisted with API Testing and validating production deployments via sanity tests
+
+
+Education
+
+
+M.Tech - Digital Electronics & Communication
+APS College of Engineering, Bengaluru - 2014
+
+B.E. - Electronics & Communication
+NMAM Institute of Technology, Nitte - 2011
+
+
+Certifications & Up-skilling
+
+
+Selenium WebDriver with Java - Basics to Advanced - Certified
+Karate for UI & API Automation - Certified
+Python for AI - Certified
+AI Masterclass (Ongoing) - Be10X
+Playwright with JavaScript (Self-paced learning, ongoing)
