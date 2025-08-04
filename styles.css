@@ -13,8 +13,65 @@ body {
 header {
   background: #222;
   color: #fff;
-  padding: 2rem 0 1rem 0;
+  padding: 0;
+}
+
+/* Navigation styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(34, 34, 34, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.nav-menu a:hover {
+  color: #1a73e8;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Hero section */
+.hero {
   text-align: center;
+  padding: 3rem 0 2rem 0;
 }
 .subtitle {
   font-size: 1.2rem;
@@ -115,6 +172,33 @@ footer {
   margin-top: 2rem;
 }
 /* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: rgba(34, 34, 34, 0.95);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 2rem 0;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-menu li {
+    margin: 1rem 0;
+  }
+}
+
 @media (max-width: 600px) {
   main {
     padding: 0 0.3rem;
@@ -131,5 +215,9 @@ footer {
   }
   h2 {
     font-size: 1.3rem;
+  }
+  
+  .navbar {
+    padding: 1rem;
   }
 } 
